@@ -197,7 +197,7 @@ jobs:
 
   merge-results:
     name: 'E2E results'
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     permissions: {}
     needs: [test]
     if: ${{ !cancelled() && needs.test.outputs.tests_ran == 'true' }}

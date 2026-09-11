@@ -11,7 +11,7 @@ jobs:
   cleanup-scorers:
     name: Delete preview scorers
     if: contains(github.event.pull_request.labels.*.name, 'preview-scorers') && github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 5
 
     steps:

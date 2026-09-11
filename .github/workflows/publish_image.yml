@@ -65,7 +65,7 @@ jobs:
 
   release_arm:
     needs: settings
-    runs-on: arm-runner
+    runs-on: blacksmith-4vcpu-ubuntu-2404-arm
     timeout-minutes: 120
     env:
       arch: arm64
