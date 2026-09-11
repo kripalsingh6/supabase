@@ -9,7 +9,7 @@ permissions: {}
 
 jobs:
   validate-pr:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     steps:
       - name: Tagged with 'do not merge'
         if: contains( github.event.pull_request.labels.*.name, 'do-not-merge')

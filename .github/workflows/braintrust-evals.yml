@@ -21,7 +21,7 @@ jobs:
   # MCP connection.
   preflight:
     name: Eval MCP preflight
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 10
 
     steps:
@@ -53,7 +53,7 @@ jobs:
     permissions:
       pull-requests: write
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'run-evals') && github.event.pull_request.head.repo.full_name == github.repository)
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 20
 
     env:

@@ -4,7 +4,7 @@ on:
     types: [opened, reopened]
 jobs:
   check-external:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     permissions:
       issues: write
     steps:
@@ -30,7 +30,7 @@ jobs:
             gh issue edit "$NUMBER" --add-label "internal-issue"
           fi
   triage-new:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     permissions:
       issues: write
     steps:
@@ -44,7 +44,7 @@ jobs:
           echo "Applying triage label for new issue"
           gh issue edit "$NUMBER" --add-label "$LABELS"
   spam-detection:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     permissions:
       issues: write
     steps:
